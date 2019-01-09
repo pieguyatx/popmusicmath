@@ -13,16 +13,16 @@ echo "<div>";
 
 $pdo = new PDO("mysql:host=$host_name;dbname=$database", $user_name, $password);
 
-// Get relevant data
+// Debug
 
-$sql = "SELECT * FROM problems";
-echo $sql . "<br/>";
+// $sql = "SELECT * FROM problems";
+// echo $sql . "<br/>";
 
-$row = $pdo->query($sql);
+// $row = $pdo->query($sql);
 
-foreach ($pdo->query($sql) as $row) {
-  echo "<strong>Problem ID</strong>: " . $row['id_problem'] . "<br/>" . "<strong>Problem</strong>: " . $row['problem'] . "<br/>" . "<strong>Difficulty</strong>: " . $row['difficulty'] . "<br/>" . "<strong>Music Link</strong>: " . $row['musicWeb'] . "<br/><br/>";
-}
+// foreach ($pdo->query($sql) as $row) {
+//   echo "<strong>Problem ID</strong>: " . $row['id_problem'] . "<br/>" . "<strong>Problem</strong>: " . $row['problem'] . "<br/>" . "<strong>Difficulty</strong>: " . $row['difficulty'] . "<br/>" . "<strong>Music Link</strong>: " . $row['musicWeb'] . "<br/><br/>";
+// }
 
 echo "</div>";
 
@@ -86,7 +86,7 @@ echo "</div>";
 
         <div class="form-header">
           <p id="description">
-            Hello! Help us learn more about you.
+            Ready for the quiz?
           </p>
         </div>
 
@@ -94,192 +94,41 @@ echo "</div>";
 
           <div class="input-item-container">
             <div class="input-label">
-              <label for="name" id="name-label">
-                * Name:
-              </label>
-            </div>
-            <div class="input-item">
-              <div class="input-bg paper">
-                <input type="text" id="name" name="name" required placeholder="Enter your first and last name.">
-              </div>
-            </div>
-          </div>
-
-          <div class="input-item-container">
-            <div class="input-label">
-              <label for="email" id="email-label">
-                * Email:
-              </label>
-            </div>
-            <div class="input-item">
-              <div class="input-bg paper">
-                <input type="email" id="email" name="email" required placeholder="Enter your email address.">
-              </div>
-            </div>
-          </div>
-
-          <div class="input-item-container">
-            <div class="input-label">
-              <label for="location">
-                * Your Location:
-              </label>
-            </div>
-            <div class="input-item">
-              <div class="input-bg paper">
-                <input type="text" id="location" name="location" required placeholder="City, state, and/or country.">
-              </div>
-            </div>
-          </div>
-
-          <div class="input-item-container">
-            <div class="input-label">
               <label for="number" id="number-label">
-                How many podcasts do you listen to, approximately?
+                How many problems do you want? (1-10)
               </label>
             </div>
             <div class="input-item">
               <div class="input-bg paper input-short">
-                <input type="number" id="number" name="number" placeholder="0" min="0" max="99">
+                <input type="number" id="number" name="number" value="10" min="0" max="10">
               </div>
             </div>
           </div>
 
           <div class="input-item-container">
             <div class="input-label">
-              <label for="listen">
-                How do you like to subscribe or listen to your podcasts?
-              </label>
-            </div>
-            <div class="input-item">
-              <div class="input-bg paper input-dropdown">
-                <select name="listen">
-                  <option value="notsure">No preference</option>
-                  <option value="apple">Apple Podcasts / iTunes</option>
-                  <option value="soundcloud">SoundCloud</option>
-                  <option value="google">Google Play</option>
-                  <option value="stitcher">Stitcher</option>
-                  <option value="radiopublic">Radio Public</option>
-                  <option value="other">Other / Not listed</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-         <div class="input-item-container">
-            <div class="input-label">
-              <legend for="recommend" required>
-                * How likely are you to talk about a podcast with a friend or colleague?
-              </legend>
-            </div>
-            <div class="input-item">
-              <fieldset class="input-bg paper input-radio input-short">
-                <div>
-                  <label for="maybe">
-                    <input id="maybe" type="radio" name="recommend" value="maybe">
-                    <span>Maybe</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="definitely">
-                    <input id="definitely" type="radio" name="recommend" value="definitely">
-                    <span>Definitely</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="notlikely">
-                    <input id="notlikely" type="radio" name="recommend" value="notlikely">
-                    <span>Not likely</span>
-                  </label>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-
-          <div class="input-item-container">
-            <div class="input-label">
-              <label for="notes">
-                Do you ever check show notes or transcripts for podcast episodes?
-              </label>
-            </div>
-            <div class="input-item">
-              <div class="input-bg paper input-dropdown input-short">
-                <select name="notes" id="dropdown">
-                  <option disabled selected value="disabled">My answer...</option>
-                  <option value="no">No</option>
-                  <option value="yes">Yes, often</option>
-                  <option value="sometimes">Yes, sometimes</option>
-                  <option value="rarely">Rarely</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-item-container">
-            <div class="input-label">
-              <legend for="interests">
-                What podcast topics most interest you, out of these options?
+              <legend for="difficulty">
+                Difficulty?
               </legend>
             </div>
             <div class="input-item">
               <fieldset class="input-bg paper input-checkbox">
                 <div>
-                  <label for="interest-teachers">
-                    <input id="interest-teachers" type="checkbox" name="recommend" value="teachers">
-                    <span>Teachers and Teaching</span>
+                  <label for="difficulty-easier">
+                    <input id="difficulty-easier" type="checkbox" name="easier" value="1" checked>
+                    <span>Easier</span>
                   </label>
                 </div>
                 <div>
-                  <label for="interest-business">
-                    <input id="interest-business" type="checkbox" name="recommend" value="business">
-                    <span>Business and EdTech</span>
+                  <label for="difficulty-medium">
+                    <input id="difficulty-medium" type="checkbox" name="medium" value="2" checked>
+                    <span>Medium</span>
                   </label>
                 </div>
                 <div>
-                  <label for="interest-design">
-                    <input id="interest-design" type="checkbox" name="recommend" value="design">
-                    <span>Design Thinking</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-young">
-                    <input id="interest-young" type="checkbox" name="recommend" value="young">
-                    <span>Education for Younger Children</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-engineers">
-                    <input id="interest-engineers" type="checkbox" name="recommend" value="engineers">
-                    <span>Engineers at Work and at Play</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-culture">
-                    <input id="interest-culture" type="checkbox" name="recommend" value="culture">
-                    <span>Cultural Comparisons</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-equity">
-                    <input id="interest-equity" type="checkbox" name="recommend" value="equity">
-                    <span>Equity and Diversity</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-research">
-                    <input id="interest-research" type="checkbox" name="recommend" value="research">
-                    <span>Research and Data</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-cs">
-                    <input id="interest-cs" type="checkbox" name="recommend" value="cs">
-                    <span>Computer Science and Coding</span>
-                  </label>
-                </div>
-                <div>
-                  <label for="interest-fundamentals">
-                    <input id="interest-fundamentals" type="checkbox" name="recommend" value="fundamentals">
-                    <span>Engineering Fundamentals</span>
+                  <label for="difficulty-harder">
+                    <input id="difficulty-harder" type="checkbox" name="harder" value="3" checked>
+                    <span>Harder</span>
                   </label>
                 </div>
               </fieldset>
@@ -288,14 +137,28 @@ echo "</div>";
 
           <div class="input-item-container">
             <div class="input-label">
-              <label for="comments">
-                Any other comments or suggestions:
-              </label>
+              <legend for="topics">
+                Math topics?
+              </legend>
             </div>
             <div class="input-item">
-              <div class="input-bg paper">
-                <textarea type="textarea" id="comments" name="comments" placeholder="Enter your comments here..." rows="5"></textarea>
-              </div>
+              <fieldset class="input-bg paper input-checkbox">
+
+              <?php
+              // Display possible topics in alphabetical order
+              $sql = "SELECT topic FROM topics";
+              $topics = $pdo->query($sql);
+              foreach ($topics as $topic) {
+                $topic = $topic['topic'];
+                echo "<div><label for='topic-" . $topic . "'>";
+                echo "<input id='topic-" . $topic . "' type='checkbox' name='" . $topic . "' value='" . $topic . "' checked>";
+                echo "<span>" . $topic . "</span>";
+                echo "</label></div>";
+              }
+
+              ?>
+
+              </fieldset>
             </div>
           </div>
 
