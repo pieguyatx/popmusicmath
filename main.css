@@ -1,0 +1,275 @@
+* {
+  -webkit-box-sizing: border-box;
+  -mox-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  text-align: center;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  background: #651a14;
+  margin: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  text-shadow: rgba(255,255,100,0.3) 0px 0px 5px;
+}
+a {
+  text-decoration: none;
+  color: hsl(239, 96%, 75%);
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-shadow: none;
+}
+a:hover, a:focus{
+  color: hsl(239, 96%, 30%);
+}
+a:active {
+  color: hsl(239, 96%, 20%);
+}
+
+header{
+  margin: 0;
+  padding: 10px 0 10px 0;
+}
+h1, h2, h3{
+  font-family: 'Prata', serif;
+  font-weight: normal;
+}
+header h1{
+  font-size: 70px;
+  margin: 0;
+  text-shadow: rgba(255,255,100,0.5) 0px 0px 10px;
+}
+header h2{
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  margin: 1em;
+  font-family: 'Prata', serif;
+  font-size: 2em;
+}
+main .separator {
+  margin: 0.5em;
+  text-shadow: rgba(255,255,100,0.7) 0px 0px 50px;
+}
+
+.survey-form-full-width {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 40% 40% 1fr;
+      grid-template-columns: 1fr 40% 40% 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+}
+.survey-form-full-width .form-header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 1/2/2/4;
+}
+.survey-form-full-width .form-inputs {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 2/2/3/4;
+}
+.survey-form-full-width .form-submit {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 3/2/4/4;
+}
+.input-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+.input-label, .input-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.input-label {
+  width: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.input-item {
+  width: 50%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.input-label {
+  text-align: right;
+}
+.input-bg {
+  width: 100%;
+  max-width: 400px;
+}
+.paper {
+  color: black;
+  background: #fffdf7; /* Background fallback */
+  padding: 1em;
+  -webkit-box-shadow: rgba(0,0,0,.8) 0px 0px 20px;
+          box-shadow: rgba(0,0,0,.8) 0px 0px 20px;
+  border-radius: 2px;
+  padding: 10px 30px;
+  margin: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fffdf7+0,ffffff+85,fff6b5+100 */
+  background: rgb(255,253,247); /* Old browsers */ /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,253,247,1) 0%,rgba(255,255,255,1) 85%,rgba(255,246,181,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-radial-gradient(center, ellipse, rgba(255,253,247,1) 0%,rgba(255,255,255,1) 85%,rgba(255,246,181,1) 100%);
+  background: -o-radial-gradient(center, ellipse, rgba(255,253,247,1) 0%,rgba(255,255,255,1) 85%,rgba(255,246,181,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,253,247,1) 0%,rgba(255,255,255,1) 85%,rgba(255,246,181,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffdf7', endColorstr='#fff6b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.input-dropdown{
+  max-width: 320px;
+}
+.input-short{
+  max-width: 220px;
+}
+.input-dropdown-short{
+  max-width: 220px;
+}
+form input,
+form select,
+form .input-radio label,
+form .input-checkbox label,
+form textarea {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+}
+fieldset,
+form textarea {
+  border: none;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+}
+form input::invalid {
+  border: red dashed 2px;
+}
+form .input-radio > div,
+form .input-checkbox > div {
+  display: block;
+  text-align: left;
+}
+form .input-radio label,
+form .input-checkbox label,
+form option:disabled,
+form textarea::-webkit-input-placeholder {
+  color: gray;
+}
+form .input-radio label,
+form .input-checkbox label,
+form option:disabled,
+form textarea:-ms-input-placeholder {
+  color: gray;
+}
+form .input-radio label,
+form .input-checkbox label,
+form option:disabled,
+form textarea::-ms-input-placeholder {
+  color: gray;
+}
+form .input-radio label,
+form .input-checkbox label,
+form option:disabled,
+form textarea::placeholder {
+  color: gray;
+}
+form input[type="radio"]:checked+span,
+form input[type="checkbox"]:checked+span {
+  color: black;
+}
+form input[type="submit"] {
+  font-family: inherit;
+  margin: 1em;
+  font-size: 1.5em;
+  padding: 0.5em;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: rgba(0,0,0,0.5) 0 0 50px;
+          box-shadow: rgba(0,0,0,0.5) 0 0 50px;
+}
+form input[type="submit"]:hover {
+  background: white;
+  -webkit-box-shadow: rgba(0,0,0,0.8) 0 0 100px;
+          box-shadow: rgba(0,0,0,0.8) 0 0 100px;
+}
+footer {
+  margin: 1em;
+}
+
+@media only screen and (max-width: 768px){
+  main {
+    margin: 10px;
+  }
+  .survey-form-full-width .form-header {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: 1/1/2/5;
+  }
+  .survey-form-full-width .form-inputs {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: 2/1/3/5;
+  }
+  .survey-form-full-width .form-submit {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: 3/1/4/5;
+  }
+  .input-item-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0.25em 0 1em 0;
+  }
+  .input-label, .input-item {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0.25em;
+  }
+  .input-label {
+    text-align: center;
+  }
+}
