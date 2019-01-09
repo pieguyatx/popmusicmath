@@ -1,6 +1,6 @@
 <?php
 
-echo "<p>Hello world!</p>";
+// Connect to database of problems
 
 include 'config.php';
 
@@ -13,8 +13,9 @@ echo "<div>";
 
 $pdo = new PDO("mysql:host=$host_name;dbname=$database", $user_name, $password);
 
-$sql = "SELECT id_problem, problem, difficulty, musicWeb FROM problems";
-// $sql = "SELECT * FROM episodes";
+// Get relevant data
+
+$sql = "SELECT * FROM problems";
 echo $sql . "<br/>";
 
 $row = $pdo->query($sql);
@@ -71,14 +72,14 @@ echo "</div>";
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-      <h1 id="title">Inquire.</h1>
+      <h1 id="title">Pop Music Math!</h1>
       <h2>A quiz and puzzle generator referencing the mathematics in pop music throughout the decades, by <a href="http://www.piuswong.com" title="Browse some of Pius's projects." target="_blank">Pius Wong</a></h2>
     </header>
 
     <main>
 
       <div class="separator">
-        ***
+        <img src="img/treble1.svg" class="branding" width=100 height=100>
       </div>
 
       <form id="survey-form" class="survey-form-full-width">
