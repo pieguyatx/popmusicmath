@@ -1,4 +1,32 @@
-<html>
+<?php
+
+echo "<p>Hello world!</p>";
+
+include 'config.php';
+
+$host_name = DB_HOST;
+$database = DB_NAME;
+$user_name = DB_USER;
+$password = DB_PASS;
+
+echo "<div>";
+
+$pdo = new PDO("mysql:host=$host_name;dbname=$database", $user_name, $password);
+
+$sql = "SELECT id_problem, problem, difficulty, musicWeb FROM problems";
+// $sql = "SELECT * FROM episodes";
+echo $sql . "<br/>";
+
+$row = $pdo->query($sql);
+
+foreach ($pdo->query($sql) as $row) {
+  echo "<strong>Problem ID</strong>: " . $row['id_problem'] . "<br/>" . "<strong>Problem</strong>: " . $row['problem'] . "<br/>" . "<strong>Difficulty</strong>: " . $row['difficulty'] . "<br/>" . "<strong>Music Link</strong>: " . $row['musicWeb'] . "<br/><br/>";
+}
+
+echo "</div>";
+
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
   <head>
 
