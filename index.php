@@ -146,7 +146,7 @@ echo "</div>";
 
               <?php
               // Display possible topics in alphabetical order
-              $sql = "SELECT topic FROM topics";
+              $sql = "SELECT topic FROM topics ORDER BY topic ";
               $topics = $pdo->query($sql);
               foreach ($topics as $topic) {
                 $topic = $topic['topic'];
@@ -155,7 +155,32 @@ echo "</div>";
                 echo "<span>" . $topic . "</span>";
                 echo "</label></div>";
               }
+              ?>
 
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="input-item-container">
+            <div class="input-label">
+              <legend for="genres">
+                Music genres?
+              </legend>
+            </div>
+            <div class="input-item">
+              <fieldset class="input-bg paper input-checkbox">
+
+              <?php
+              // Display possible topics in alphabetical order
+              $sql = "SELECT genre FROM genres ORDER BY genre";
+              $genres = $pdo->query($sql);
+              foreach ($genres as $genre) {
+                $genre = $genre['genre'];
+                echo "<div><label for='genre-" . $genre . "'>";
+                echo "<input id='genre-" . $genre . "' type='checkbox' name='" . $genre . "' value='" . $genre . "' checked>";
+                echo "<span>" . $genre . "</span>";
+                echo "</label></div>";
+              }
               ?>
 
               </fieldset>
